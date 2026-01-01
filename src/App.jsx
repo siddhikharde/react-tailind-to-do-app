@@ -10,8 +10,7 @@ function App() {
 const date=new Date().toDateString();
 const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // We'll toggle Tailwind's `dark` class on the root wrapper
-
+  
 
 useEffect(() => {
   const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
@@ -46,28 +45,31 @@ const deleteTask=(taskToDelete)=>{
 
   return (
     <div className={isDarkMode ? 'dark' : ''}>
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
+      <div style={{backgroundColor: isDarkMode ? "#111827" : "#f9fafb"}}
+      className="min-h-screen bg-gray-50 text-gray-900 dark:text-gray-100 transition-colors">
         <div className="mx-auto max-w-3xl px-6 py-8">
           <header className="flex items-center justify-between mb-6">
             <div>
-              <h1 className="text-3xl font-bold">My Tasks</h1>
-              <p className="text-sm text-gray-600 dark:text-gray-400">{date}</p>
+              <h1 style={{color:isDarkMode?"#f9fafb":"#111827"}} className="text-3xl font-bold">My Tasks</h1>
+              <p style={{color:isDarkMode?"#f9fafb":"#111827"}} className="text-sm text-gray-600">{date}</p>
             </div>
             <button
               onClick={() => setIsDarkMode(!isDarkMode)}
-              className="p-2 rounded-md bg-transparent hover:bg-gray-200 dark:hover:bg-gray-800"
+              style={{color:isDarkMode?"#f9fafb":"#111827", hover:{backgroundColor:isDarkMode?"#374151":"#e5e7eb"}}}
+              className="p-2 cursor-pointer rounded-md bg-transparent "
               aria-label="Toggle dark mode"
             >
               <Moon className="w-5 h-5" />
             </button>
           </header>
 
-          <p className="mb-6 italic text-gray-600 dark:text-gray-400">"The way to get started is to quit talking and begin doing."</p>
+          <p style={{color:isDarkMode?"#f9fafb":"#111827"}} className="mb-6 italic text-gray-600 dark:text-gray-400">"The way to get started is to quit talking and begin doing."</p>
 
           <div className="flex gap-2 mb-4">
             <input
               type="text"
-              className="flex-1 p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 placeholder-gray-400 text-sm"
+              style={{backgroundColor:isDarkMode?"#111827":"#f9fafb", borderColor:isDarkMode?"#374151":"#e5e7eb", color:isDarkMode?"#f9fafb":"#111827"}}
+              className="flex-1 focus:outline-none p-3 rounded-md border-[2px] border-gray-200 bg-white placeholder-gray-400 text-sm"
               placeholder="Add a Task"
               value={newTask}
               onChange={(e) => setNewTask(e.target.value)}
@@ -75,7 +77,8 @@ const deleteTask=(taskToDelete)=>{
                 if (e.key === 'Enter') addTask()
               }}
             />
-            <button onClick={addTask} className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md">
+            <button onClick={addTask}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md">
               <Plus /> Add
             </button>
           </div>
@@ -83,7 +86,8 @@ const deleteTask=(taskToDelete)=>{
           <div className="mb-6">
             <input
               type="text"
-              className="w-full p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 placeholder-gray-400 text-sm"
+              style={{backgroundColor:isDarkMode?"#111827":"#f9fafb", borderColor:isDarkMode?"#374151":"#e5e7eb", color:isDarkMode?"#f9fafb":"#111827"}}
+              className="w-full p-3 focus:outline-none rounded-md border-[2px] border-gray-200  bg-white placeholder-gray-400 text-sm"
               placeholder="Search a Task"
               onKeyUp={(e) => {
                 const searchTerm = e.target.value.toLowerCase()
