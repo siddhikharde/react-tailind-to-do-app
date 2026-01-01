@@ -110,7 +110,7 @@ const deleteTask=(taskToDelete)=>{
             />
           </div>
 
-          <section>
+          <div className='h-[300px] overflow-y-scroll scroll-auto'>
             {tasks.length === 0 ? (
               <div className="flex flex-col items-center justify-center py-12">
                 <p className="mb-4 text-gray-600 dark:text-gray-400 italic">No tasks available. Please add a task.</p>
@@ -123,7 +123,7 @@ const deleteTask=(taskToDelete)=>{
                 ))}
               </div>
             )}
-          </section>
+          </div>
         </div>
       </div>
     </div>
