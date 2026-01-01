@@ -24,7 +24,7 @@ function TaskCard({ task, deleteTask }) {
         className="p-2 rounded-md text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20"
         aria-label="Delete task"
       >
-        <Trash className="w-5 h-5" />
+        <Trash className="w-5 h-5 cursor-pointer" />
       </button>
     </div>
   )

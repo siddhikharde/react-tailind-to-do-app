@@ -78,7 +78,7 @@ const deleteTask=(taskToDelete)=>{
               }}
             />
             <button onClick={addTask}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md">
+            className="inline-flex cursor-pointer items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md">
               <Plus /> Add
             </button>
           </div>
