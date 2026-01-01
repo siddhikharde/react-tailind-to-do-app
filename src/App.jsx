@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Moon, Plus } from 'lucide-react'
-import TaskCard from './Taskcard.jsx'
+import TaskCard from "./TaskCard.jsx";
 import { toast } from 'react-hot-toast'
 import noTask from './assets/noTask.jpg'
 
